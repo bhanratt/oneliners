@@ -591,4 +591,6 @@ Exclude a column with cut (e.g., all but the 5th field in a tab-delimited file):
 Find files containing text (`-l` outputs only the file names, `-i` ignores the case `-r` descends into subdirectories)
 
     grep -lir "some text" *
-
+    
+Find largest 1000 files under directory    
+    find /archive/cpd/ -type f -exec ls -al {} \; | sort -nr -k5 | head -n 1000 > top1000files.txt
