@@ -595,8 +595,9 @@ Find files containing text (`-l` outputs only the file names, `-i` ignores the c
 Find largest 1000 files under directory    
     `find /archive/cpd/ -type f -exec ls -al {} \; | sort -nr -k5 | head -n 1000 > top1000files.txt`
 
-Batch rename fastq files  
+Batch copy rename fastq files  
 ```
+mkdir merged
 for i in $(ls *_R1.fastq.gz);
 do
 cp $i merged/${i%_R1.fastq.gz}_MiSeq6_R1.fastq.gz;  
