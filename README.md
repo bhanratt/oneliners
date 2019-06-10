@@ -604,3 +604,6 @@ cp $i merged/${i%_R1.fastq.gz}_MiSeq6_R1.fastq.gz;
 cp ${i%_R1.fastq.gz}_R2.fastq.gz merged/${i%_R1.fastq.gz}_MiSeq6_R2.fastq.gz;  
 done
 ```
+
+Print summary statistics for a .fasta file  
+`awk 'BEGIN{RS=">";FS="\n";print "name\tA\tC\tG\tT\tN\tlength\tGC%"}NR>1{sumA=0;sumT=0;sumC=0;sumG=0;sumN=0;seq="";for (i=2;i<=NF;i++) seq=seq""$i; k=length(seq); for (i=1;i<=k;i++) {if (substr(seq,i,1)=="T") sumT+=1; else if (substr(seq,i,1)=="A") sumA+=1; else if (substr(seq,i,1)=="G") sumG+=1; else if (substr(seq,i,1)=="C") sumC+=1; else if (substr(seq,i,1)=="N") sumN+=1}; print $1"\t"sumA"\t"sumC"\t"sumG"\t"sumT"\t"sumN"\t"k"\t"(sumC+sumG)/k*100}' Trinity.fasta > Summary.txt`
