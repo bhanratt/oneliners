@@ -610,3 +610,9 @@ Print summary statistics for a .fasta file
 
 If R merging keeps failing and putting NAs in lots of things, there's probably some spaces in the id columns. Remove with sed:  
 `sed -i "s/ //g" file`
+```
+for i in *.txt
+do
+	sed "s/ //g" $i > ${i%.txt}.fix
+done
+```
