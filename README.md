@@ -616,3 +616,7 @@ do
 	sed "s/ //g" $i > ${i%.txt}.fix
 done
 ```
+
+Extract descriptions from trinotate reports  
+For a text file of just the full description line  
+`sed -e 's/.*Full\=\(.*\)\;\^.*/\1/' descriptions_blank.txt > descriptions_formatted.txt`
