@@ -620,3 +620,9 @@ done
 Extract descriptions from trinotate reports  
 For a text file of just the full description line  
 `sed -e 's/.*Full\=\(.*\)\;\^.*/\1/' descriptions_blank.txt > descriptions_formatted.txt`
+
+Pairing paired end reads  
+`https://cme.h-its.org/exelixis/web/software/pear/`  
+
+Fixing paired end reads that are not perfectly paired for some reason
+`https://github.com/linsalrob/fastq-pair`  
