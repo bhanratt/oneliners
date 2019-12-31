@@ -228,7 +228,7 @@ Find the most common strings in column 2:
 
 Pick 10 random lines from a file:
 
-    shuf file.txt | head -n 10
+    shuf -n 10 file.txt > randonsample.txt
 
 
 Print all possible 3mer DNA sequence combinations:
