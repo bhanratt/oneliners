@@ -1,0 +1,2 @@
+#retrieve txStart of a gene
+mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A -N -e "SELECT k.chrom, kg.txStart, x.geneSymbol FROM knownCanonical k, knownGene kg, kgXref x WHERE k.transcript = x.kgID AND k.transcript = kg.name AND x.geneSymbol LIKE 'SYP';" hg19
