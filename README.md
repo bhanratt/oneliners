@@ -626,3 +626,6 @@ Pairing paired end reads
 
 Fixing paired end reads that are not perfectly paired for some reason
 `https://github.com/linsalrob/fastq-pair`  
+
+Rsync to sync two directories (better than CP) (options for verbose, recursive, archive mode(preserves timestamps), and human readable)  
+`rsync -vrah cutandrun/ /fh/scratch/delete90/nelson_p/bhanratt/restored/`
