@@ -629,3 +629,6 @@ Fixing paired end reads that are not perfectly paired for some reason
 
 Rsync to sync two directories (better than CP) (options for verbose, recursive, archive mode(preserves timestamps), and human readable)  
 `rsync -vrah cutandrun/ /fh/scratch/delete90/nelson_p/bhanratt/restored/`
+
+Sum column in awk  
+`awk -F'\t' '{s+=$5}END{print s}' sorted.DTB-266-BL.hg19.slice.out`
