@@ -631,4 +631,7 @@ Rsync to sync two directories (better than CP) (options for verbose, recursive, 
 `rsync -vrah cutandrun/ /fh/scratch/delete90/nelson_p/bhanratt/restored/`
 
 Sum column in awk  
-`awk -F'\t' '{s+=$5}END{print s}' sorted.DTB-266-BL.hg19.slice.out`
+`awk -F'\t' '{s+=$5}END{print s}' sorted.DTB-266-BL.hg19.slice.out`  
+
+Convert chromosome IDs from N to chrN  
+`cat file | sed -E '/^[^#]/{s/^([^#]+)/chr\1/; s/^chrMT/chrM/}' > chranno.file`
