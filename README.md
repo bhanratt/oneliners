@@ -634,4 +634,12 @@ Sum column in awk
 `awk -F'\t' '{s+=$5}END{print s}' sorted.DTB-266-BL.hg19.slice.out`  
 
 Convert chromosome IDs from N to chrN  
-`cat file | sed -E '/^[^#]/{s/^([^#]+)/chr\1/; s/^chrMT/chrM/}' > chranno.file`
+`cat file | sed -E '/^[^#]/{s/^([^#]+)/chr\1/; s/^chrMT/chrM/}' > chranno.file`  
+
+Sort but maintain header, where header starst with Chr
+```
+for i in *.tsv
+do
+  cat $i | awk '$0~"^Chr" { print $0; next } { print $0 | "sort -k1,1V -k2,2n" }' > $i.temp1;
+done
+```
