@@ -643,3 +643,8 @@ do
   cat $i | awk '$0~"^Chr" { print $0; next } { print $0 | "sort -k1,1V -k2,2n" }' > $i.temp1;
 done
 ```
+
+Find all files recursively and print the absolute path  
+```
+find ~+ -type f -name "*.bam" > ~/allbams.txt
+```
