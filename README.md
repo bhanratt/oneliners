@@ -648,3 +648,8 @@ Find all files recursively and print the absolute path
 ```
 find ~+ -type f -name "*.bam" > ~/allbams.txt
 ```
+
+Check of bam file is sorted. Returns SO:coordinate if it is sorted.  
+```
+samtools view -H test.bam | grep @HD
+```
